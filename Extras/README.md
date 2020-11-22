@@ -1,4 +1,4 @@
 
 **double_pendulum**
 
-<img src="/double_pendulum.gif" width="480" />
+<img src="double_pendulum.gif" width="480" />
