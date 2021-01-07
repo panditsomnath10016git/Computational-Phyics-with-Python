@@ -10,7 +10,7 @@ def f(x):
 		 y=1.0
 	return y
 	
-N=20		#number of fourier terms
+N=20		    #number of fourier terms
 xi=-1.0;xf=1.0	#function range
 l=2.0			#periodicity 
 

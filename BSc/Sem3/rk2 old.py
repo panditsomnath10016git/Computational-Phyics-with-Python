@@ -1,4 +1,4 @@
-#pylint:disable=W0312
+
 import math as m
 import matplotlib.pyplot as plt
 

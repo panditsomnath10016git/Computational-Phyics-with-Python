@@ -1,6 +1,7 @@
 #solve system of equation by Gauss-seldel method
 #define the coefficients of equations in px+qy+rz=m form
 #such that diagonal elements are dominent and non zero  of coefficient matrix !
+
 #input data
 d=(95,104,71)			#rhs coefficients
 a0=(83.0,11.0,-4.0)	#coefficients of x0,x1,x2...xn

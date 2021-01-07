@@ -17,14 +17,14 @@ def f(x):		#define the function such that argument is a numpy array
 			y[i]=1.0
 	return y
 	
-N=5		#number of fourier series terms
+N=5		    #number of fourier series terms
 
 nint=10001	#number of points in integration (odd for simpson1_3 ,even for trapizoidal integration)
 
 xi,xf=-1.0,1.0		#range of graph
-np=1000		#number of points in graph
+np=1000		        #number of points in graph
 
-ignr=[0]		#to ignore  coefft.s [n's'], otherwise [0]
+ignr=[0]		    #to ignore  coefft.s [n's'], otherwise [0]
 
 ##########################
 #simpson 1/3 integration module
@@ -49,8 +49,8 @@ def fnc(x,n):return cos(arg*n*x)
 def fns(x,n):return sin(arg*n*x)'''
 
 h=(xf-xi)/np				#stepsize of graph
-xx=linspace(xi,xf,np)  # x value array for graph
-xint=linspace(ri,rf,nint)  #x value for integration
+xx=linspace(xi,xf,np)       # x value array for graph
+xint=linspace(ri,rf,nint)   #x value for integration
 yy=[]								#y=f(x) array
 A=zeros(N); B=zeros(N)		#coefft. array
 
@@ -68,7 +68,7 @@ for n in nn:
 		continue
 	yc=f(xint)*cos(arg*n*xint)
 	ys=f(xint)*sin(arg*n*xint)
-	A[n-1]=(2/l)*simps1_3(yc,xint)	#integration for..
+	A[n-1]=(2/l)*simps1_3(yc,xint)	    #integration for..
 	B[n-1]=(2/l)*simps1_3(ys,xint)		# ..coefficients
 	
 #print "an=", A ,"\n bn=",B

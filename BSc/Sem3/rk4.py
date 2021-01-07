@@ -7,7 +7,7 @@ def f(x,y):		#defining the function
 	return fx
 	
 x0,y0=0.0,0.0			#initial values
-xmin,xmax=-1.5,1.5	#range of solution
+xmin,xmax=-1.5,1.5	    #range of solution
 h=0.01 					    #step size
 np=int(abs(xmax-x0)/h)		#points in + direction
 nm=int(abs(xmin-x0)/h)		#points in -  direction

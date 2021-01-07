@@ -27,4 +27,4 @@ while i<xf:
 	
 plt.ylim(ymax=2*p[0])
 plt.plot(x,p)
-plt.savefig("float division.png")
+plt.savefig("random float distribution.png")
