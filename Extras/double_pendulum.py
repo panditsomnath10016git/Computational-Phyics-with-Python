@@ -1,3 +1,5 @@
+#Copied from https://matplotlib.org/examples/animation/double_pendulum_animated.html
+
 """
 ===========================
 The double pendulum problem
