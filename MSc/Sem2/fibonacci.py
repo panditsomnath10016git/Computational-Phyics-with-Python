@@ -4,7 +4,7 @@
         
      Author : Somnath Pandit , Date : 07.01.2021
     
-This program finds the n-th term of Fibonacci series and the ration of n & n-1 th term    
+This program finds the n-th term of Fibonacci series and the ratio of n & n-1 th term    
  
  """
     
