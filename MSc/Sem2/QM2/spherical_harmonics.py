@@ -45,7 +45,7 @@ Z = R * np.cos(THETA)
 ## plotting the harmonic
 fig = plt.figure(figsize=plt.figaspect(1.))
 ax = fig.gca(projection='3d')
-ax.view_init(20)
+#ax.view_init(20)
 #ax.axis('off')
 if real: phase='Re'; 
 else: phase='Im'
