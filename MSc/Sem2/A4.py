@@ -8,8 +8,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+print("Press enter to see results")
 
 ## Q1
+stop=input("Q1> --- \n")
 
 eps= 1
 i= 0          #counting index
@@ -29,8 +31,9 @@ print ("After %d loops eps has no effect on one."%i)
 #min eps= 1.1102230246251565e-16
 #After 52 loops eps has no effect on one 
 
-"""
+
 ## Q2  -----------------------------
+stop=input("\n Q2> --- \n")
 
 n= int(input("Input 'n' such that array length is 3*n. n= "))
 print ("Length of array is = ",3*n)
@@ -50,6 +53,7 @@ print (cycl_arr)
 
 
 ## Q3 -----------------------------
+stop=input("\n Q3> --- \n")
 
 m= 10
 framed_one= np.zeros((m,m))  #initialize array filled with zeros
@@ -76,6 +80,7 @@ print(framed_one)
 
 
 ## Q4  -----------------------------
+stop=input("\n Q4> --- \n")
 
 x= np.linspace(-10,10,100)  #for contour plot
 y= np.linspace(-10,10,100)
@@ -102,8 +107,26 @@ plt.savefig("Q4.png",dpi=300)
 plt.show()
 
 
-"""
 
+## Q5 --------------------------------
+stop=input("\nQ5> --- \n")
+
+d=1
+lmda=1
+y=np.linspace(-10,10,100)
+z=np.linspace(-10,10,100)
+
+Y,Z= np.meshgrid(y,z)
+V=lmda*9*np.log(((Y+d)**2+Z**2)/((Y-d)**2+Z**2)) #potential(*10^9)
+
+contours= plt.contour(Y,Z,V,50)  #potential plot
+plt.clabel(contours, inline=1)
+plt.title(r"Equipotential lines of $V(x,y,z)=\frac{\lambda}{4\pi\epsilon_{0}}\ ln\left[ \frac{(y+d)^2+z^2}{(y-d)^2+z^2}\right]$ in x=0 plane"+"\n")
+plt.xlabel("$y \longrightarrow$")
+plt.ylabel("$z \longrightarrow$")
+plt.tight_layout
+plt.savefig("Q5.png",dp1=300)
+plt.show()
 
 
 
