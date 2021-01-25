@@ -25,9 +25,9 @@ def Y_2(m,theta,phi,real):
         return psi*np.sin(m*phi)
 
 ## taking the value of m and phase as input 
-m=int(input("l=2,m= "))
+m=int(input("l= 2,m= "))
 if m!=0 : 
-    real= bool(int(input("real=1,complex=0..? ")))
+    real= bool(int(input("real=1,imaginary=0..? ")))
 else : 
     real= True
 
@@ -45,16 +45,20 @@ Z = R * np.cos(THETA)
 ## plotting the harmonic
 fig = plt.figure(figsize=plt.figaspect(1.))
 ax = fig.gca(projection='3d')
-#ax.view_init(30,45)
-ax.axis('off')
-ax.set_title(r'$Y_2^{%d}$'%m)
+ax.view_init(20)
+#ax.axis('off')
+if real: phase='Re'; 
+else: phase='Im'
+ax.set_title(phase+'$(Y_2^{%d})$'%m)
 plot = ax.plot_surface(
     X, Y, Z, rstride=1, cstride=1, cmap=cm.rainbow,
     linewidth=0.1, antialiased=False, alpha=.85)
-    
+ax.set_xlabel("$x \\rightarrow$",fontsize=20)
+ax.set_ylabel("$y \\rightarrow$",fontsize=20) 
+ax.set_zlabel("$z \\rightarrow$",fontsize=20) 
 fig.tight_layout()
-plt.savefig("Y_2%d_%r.png"%(m,real),dpi=250)
-plt.show()
+plt.savefig("Y_2%d_%s.png"%(m,phase),dpi=250)
+#plt.show()
 """
 #rotating view
 for angle in range(0, 360):
