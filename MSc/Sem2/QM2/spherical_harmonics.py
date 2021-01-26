@@ -28,7 +28,7 @@ def SpHarmonics(l,m,theta,phi,real=True):
             psi = np.sqrt(15/(32*np.pi))*np.sin(theta)**2
     
     if m==0:
-        phase = " "
+        phase = ""
         Y_lm = psi
     else:
         if real:
@@ -84,7 +84,7 @@ for m in mm:
         print(l,m,phase)
         fcolor.set_array(Y_lm)
         fig.colorbar(fcolor,shrink=.5,label=phase+'$(Y_{%d}^{%d})$'%(l,m))
-        plt.savefig("Y_%d%d_%s.png"%(l,m,phase))
+        plt.savefig("%sY_%d%d.png"%(phase,l,m))
         #plt.show()
         """
         # rotating view
