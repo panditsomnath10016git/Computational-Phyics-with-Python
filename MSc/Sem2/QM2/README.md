@@ -1,7 +1,7 @@
-*$Y_1^{-1}$*
+# $Y_1^{-1}$
 <img src="ReY_1-1.png" width="475" /> <img src="ImY_1-1.png" width="475" />
 
-*$Y_1^{0}$*
+# Y_1^{0}
 <img src="Y_10.png" width="475" />
 
 *$Y_1^{1}$*
