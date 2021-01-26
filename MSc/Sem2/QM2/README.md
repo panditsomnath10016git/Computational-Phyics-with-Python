@@ -11,13 +11,13 @@
 ## Y_2,-2
 <img src="ReY_2-2.png" width="475" /> <img src="ImY_2-2.png" width="475" />
 
-## Y_1,-1
+## Y_2,-1
 <img src="ReY_2-1.png" width="475" /> <img src="ImY_2-1.png" width="475" />
 
 ## Y_2,0
 <img src="Y_20.png" width="475" />
 
-## Y_1,1
+## Y_2,1
 <img src="ReY_21.png" width="475" /> <img src="ImY_21.png" width="475" />
 
 ## Y_2,2
