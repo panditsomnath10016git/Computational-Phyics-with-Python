@@ -125,7 +125,7 @@ plt.title(r"Equipotential lines of $V(x,y,z)=\frac{\lambda}{4\pi\epsilon_{0}}\ l
 plt.xlabel("$y \longrightarrow$")
 plt.ylabel("$z \longrightarrow$")
 plt.tight_layout
-plt.savefig("Q5.png",dp1=300)
+plt.savefig("Q5.png",dpi=300)
 plt.show()
 
 
