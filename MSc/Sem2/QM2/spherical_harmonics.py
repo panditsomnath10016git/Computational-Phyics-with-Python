@@ -71,7 +71,9 @@ for m in mm:
             ax.view_init(20)
 
         #ax.axis('off')
-        ax.set_title("Plot of  r="+phase+'$\left(Y_{%d}^{%d}(\\theta,\phi)\\right)$'%(l,m))
+        ax.set_title("Plot of  r=|"+phase+
+            '$\left(Y_{%d}^{%d}(\\theta,\phi)\\right)$|'%(l,m),
+            fontsize=20)
         fcolor=cm.ScalarMappable(cmap=plt.get_cmap('rainbow'))
         plot = ax.plot_surface(
             X, Y, Z, rstride=1, cstride=1, 
@@ -83,7 +85,8 @@ for m in mm:
         fig.tight_layout()
         print(l,m,phase)
         fcolor.set_array(Y_lm)
-        fig.colorbar(fcolor,shrink=.5,label=phase+'$(Y_{%d}^{%d})$'%(l,m))
+        fig.colorbar(fcolor,shrink=.5,
+            label=phase+'$(Y_{%d}^{%d})$'%(l,m))
         plt.savefig("%sY_%d%d.png"%(phase,l,m))
         #plt.show()
         """
