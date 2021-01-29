@@ -4,7 +4,7 @@
         
      Author : Somnath Pandit , Date : 23.01.2021
 
-This program plots spherical harmonics for l=2    
+This program plots spherical harmonics for l=1,2    
 """
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import axes3d
