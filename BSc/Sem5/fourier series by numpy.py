@@ -36,7 +36,7 @@ def simps1_3(ya,xa):
 #trapizoidal integration module	
 def trpzd(ya,xa):
 	h=(xa[-1]-xa[0])/(len(xa)-1)
-	s=(ya[0]+2*sum(ya[1:-2:2])+ya[-1])
+	s=(ya[0]+2*sum(ya[1:-2])+ya[-1])
 	return (h/2)*s
 	
 

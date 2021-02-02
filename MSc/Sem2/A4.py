@@ -103,7 +103,7 @@ plt.title(r"Contours of $U=\frac{1}{2} (x^2+y^2)$ and its gradient")
 plt.xlabel("$x \longrightarrow$")
 plt.ylabel("$y \longrightarrow$")
 plt.tight_layout
-plt.savefig("Q4.png",dpi=300)
+plt.savefig("A4_Q4.png",dpi=300)
 plt.show()
 
 
@@ -125,7 +125,7 @@ plt.title(r"Equipotential lines of $V(x,y,z)=\frac{\lambda}{4\pi\epsilon_{0}}\ l
 plt.xlabel("$y \longrightarrow$")
 plt.ylabel("$z \longrightarrow$")
 plt.tight_layout
-plt.savefig("Q5.png",dpi=300)
+plt.savefig("A4_Q5.png",dpi=300)
 plt.show()
 
 
