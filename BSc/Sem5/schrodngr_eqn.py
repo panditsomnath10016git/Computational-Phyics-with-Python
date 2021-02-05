@@ -21,12 +21,11 @@ def Schroed(y, r, V, E):
 	
 
 def rk4(f, psi0, x, V, E):
- '''Fourth-order Runge-Kutta method to solve 
+ """Fourth-order Runge-Kutta method to solve 
 	 phi’=f(psi,x) with psi(x[0])=psi0
 	 Integrates function f with inital values psi0
 	 and potenital V numerically.
-	 Output is possible multidimensional (in psi) array with len(x).
- 	'''
+	 Output is possible multidimensional (in psi) array with len(x)."""
  	n = len(x) 
  	psi = np.array([psi0]*n) 
  	for i in xrange(n -1):
