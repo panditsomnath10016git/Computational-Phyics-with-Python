@@ -4,13 +4,15 @@ import matplotlib.pyplot as plt
 """ From semi empirical mass formula find the mass number at neutron & proton drip line"""
 
 
-Ai, Af = 10, 200  # min and max A values for plot
-n = 10000
+Ai, Af = 10, 200  # min and max A values for graph
+n = 10000  # No of points for graph
 A = np.linspace(Ai, Af, n)
 Z = 50.0  # Z value --constant
 N = 68.0  # N value --constant
 
-### neutron drip line
+
+### Neutron drip line
+# Binding energy terms diiferentiated with respect to A at const Z
 vol = 15.56
 sur = -17.23 * (2.0 / 3) * A ** (-1.0 / 3)
 col = 0.72 * Z * (Z - 1) * A ** (-4.0 / 3) / 3
@@ -21,7 +23,8 @@ db_da_Z = vol + sur + col + asym
 # Value of A at db_da_Z=0
 A_at_dbdaZ0 = A[np.argmin(np.abs(db_da_Z))]
 
-### proton drip line
+
+### Proton drip line
 # Binding energy terms diiferentiated with respect to A at const N
 vol = 15.56
 sur = -17.23 * (2.0 / 3) * A ** (-1.0 / 3)
@@ -39,7 +42,7 @@ db_da_N = vol + sur + col + asym
 A_at_dbdaN0 = A[np.argmin(np.abs(db_da_N))]
 
 
-# plotting the graph for neutron dripline
+# Plotting the graph for neutron dripline
 plt.plot(A, db_da_Z, A_at_dbdaZ0, 0, "o")
 plt.annotate("(%d,0)" % A_at_dbdaZ0, xy=(A_at_dbdaZ0, 0), xycoords="data")
 plt.xlabel("A $\longrightarrow$")
@@ -50,10 +53,10 @@ plt.ylabel(
 plt.ylim(-50, 50)
 plt.grid()
 plt.tight_layout()
-plt.savefig("neutron drip line.png")
+# plt.savefig("neutron_dripline.png")
 plt.show()
 
-# plotting the graph for proton dripline
+# Plotting the graph for proton dripline
 plt.plot(A, db_da_N, A_at_dbdaN0, 0, "o")
 plt.annotate("(%d,0)" % A_at_dbdaN0, xy=(A_at_dbdaN0, 0), xycoords="data")
 plt.xlabel("A $\longrightarrow$")
@@ -64,5 +67,5 @@ plt.ylabel(
 plt.ylim(-50, 50)
 plt.grid()
 plt.tight_layout()
-plt.savefig("proton drip line.png")
+# plt.savefig("proton_dripline.png")
 plt.show()
