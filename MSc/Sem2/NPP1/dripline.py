@@ -1,7 +1,7 @@
+""" From semi empirical mass formula find the mass number at neutron & proton drip line"""
+
 import numpy as np
 import matplotlib.pyplot as plt
-
-""" From semi empirical mass formula find the mass number at neutron & proton drip line"""
 
 
 Ai, Af = 10, 200  # min and max A values for graph
