@@ -34,9 +34,7 @@ df = 1 / np.cosh(2 * x) ** 2
 plt.plot(x[1:-1], df_CD, ".", label="Central difference ")
 plt.plot(x, df, label="analytic")
 plt.xlim(-2, 2)
-plt.title(
-    r"Plot of $y= \frac{d}{dx} \left(1+\frac{1}{2}\tanh(2x)\right)$"
-)
+plt.title(r"Plot of $y= \frac{d}{dx} \left(1+\frac{1}{2}\tanh(2x)\right)$")
 plt.xlabel("$x \longrightarrow$")
 plt.ylabel("$y \longrightarrow$")
 plt.legend()
@@ -45,9 +43,7 @@ plt.tight_layout()
 plt.show()
 
 
-print(
-    20 * "-"
-)  # ------------------------------------------------
+print(20 * "-")  # ------------------------------------------------
 ##Q2 - numerical differentiation of the data in 'data.txt' file
 input(
     ">>Q2 - Numerical differentiation of the data in 'data.txt' file\n>> Press enter..."
@@ -103,25 +99,19 @@ plt.tight_layout()
 plt.show()
 
 
-print(
-    20 * "-"
-)  # ------------------------------------------------
+print(20 * "-")  # ------------------------------------------------
 ##Q3 - Integrate a function by Trapezoidal method
-input(
-    ">>Q3 - Integrate a function by Trapezoidal method \n>> Press enter..."
-)
+input(">>Q3 - Integrate a function by Trapezoidal method \n>> Press enter...")
 
 
 def trapezoidal(x, y):
     h = (x[-1] - x[0]) / (len(x) - 1)
-    s = y[0] + 2 * sum(y[1:-2]) + y[-1]
+    s = y[0] + 2 * sum(y[1:-1]) + y[-1]
     return (h / 2) * s
 
 
 xi, xf = 0, 2  # initial and final x value
-N = int(
-    input("Number of points = ")
-)  # no. of points for trapezoidal method
+N = int(input("Number of points = "))  # no. of points for trapezoidal method
 slice_n = N - 1  # number of slices
 x = np.linspace(xi, xf, N)  # x values
 y = x ** 4 - 2 * x + 1  # the integrand
@@ -129,9 +119,7 @@ y = x ** 4 - 2 * x + 1  # the integrand
 numerical_val = trapezoidal(x, y)  # integration value
 real_val = 4.4
 
-err = (
-    abs((numerical_val - real_val) / real_val) * 100
-)  # fractional error
+err = abs((numerical_val - real_val) / real_val) * 100  # fractional error
 
 print(
     "Value of integration with %d slices is = %f \nfractional error = %f "
@@ -160,20 +148,18 @@ fractional error = 0.587944 %
 """
 
 
-print(
-    20 * "-"
-)  # --------------------------------------------------
+print(20 * "-")  # --------------------------------------------------
 ##Q4 - plot of function E(x) =int_0^x exp(-t^2) dt (integrate with trapezoidal method)
 input(
     ">>Q4 - Plot of function E(x) = int_0^x exp(-t^2) dt (integrate with trapezoidal method\n>> Press enter..."
 )
 
 # trapezoidal method of integtation
-def trapezoidal(x, y):
-    h = (x[-1] - x[0]) / (len(x) - 1)
-    s = y[0] + 2 * sum(y[1:-2]) + y[-1]
-    return (h / 2) * s
-
+# def trapezoidal(x, y):
+#    h = (x[-1] - x[0]) / (len(x) - 1)
+#    s = y[0] + 2 * sum(y[1:-2]) + y[-1]
+#    return (h / 2) * s
+from trapezoidal import trapezoidal
 
 xi, xf = 0, 3  # initial and final x value
 dx = 0.1  # step size
@@ -198,13 +184,9 @@ plt.tight_layout()
 plt.show()
 
 
-print(
-    20 * "-"
-)  # -------------------------------------------------
+print(20 * "-")  # -------------------------------------------------
 ##Q5 - plotting the bessel functions J(m,x)
-input(
-    ">>Q5 - Plotting the bessel functions J(m,x) \n>> Press enter..."
-)
+input(">>Q5 - Plotting the bessel functions J(m,x) \n>> Press enter...")
 
 # Bessel function
 def J(m, x):

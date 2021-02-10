@@ -3,6 +3,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Constants
+A_v = 15.56
+A_s = 17.23
+A_c = 0.72
+A_a = 23.28
+A_p = 12
 
 Ai, Af = 10, 200  # min and max A values for graph
 n = 10000  # No of points for graph
@@ -13,10 +19,10 @@ N = 68.0  # N value --constant
 
 ### Neutron drip line
 # Binding energy terms diiferentiated with respect to A at const Z
-vol = 15.56
-sur = -17.23 * (2.0 / 3) * A ** (-1.0 / 3)
-col = 0.72 * Z * (Z - 1) * A ** (-4.0 / 3) / 3
-asym = -23.28 * (1 - 4 * (Z ** 2 / A ** 2))
+vol = A_v
+sur = -A_s * (2.0 / 3) * A ** (-1.0 / 3)
+col = A_c * Z * (Z - 1) * A ** (-4.0 / 3) / 3
+asym = -A_a * (1 - 4 * (Z ** 2 / A ** 2))
 
 db_da_Z = vol + sur + col + asym
 
@@ -26,15 +32,10 @@ A_at_dbdaZ0 = A[np.argmin(np.abs(db_da_Z))]
 
 ### Proton drip line
 # Binding energy terms diiferentiated with respect to A at const N
-vol = 15.56
-sur = -17.23 * (2.0 / 3) * A ** (-1.0 / 3)
-col = (
-    -0.72
-    * A ** (-4.0 / 3)
-    * (5 * A ** 2 - 2 * A * (2 * N + 1) - N * (N + 1))
-    / 3
-)
-asym = -23.28 * (1 - 4 * (N ** 2 / A ** 2))
+vol = A_v
+sur = -A_s * (2.0 / 3) * A ** (-1.0 / 3)
+col = -A_c * A ** (-4.0 / 3) * (5 * A ** 2 - 2 * A * (2 * N + 1) - N * (N + 1)) / 3
+asym = -A_a * (1 - 4 * (N ** 2 / A ** 2))
 
 db_da_N = vol + sur + col + asym
 

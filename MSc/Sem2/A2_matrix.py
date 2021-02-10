@@ -21,9 +21,7 @@ def matmul(A, B):
     return M
 
 
-n = int(
-    input("Dimension of matrix= ")
-)  # Taking the dimension as input
+n = int(input("Dimension of matrix= "))  # Taking the dimension as input
 
 A = np.zeros((n, n))  # creating matrices..
 B = np.zeros((n, n))  # ..filled with zero

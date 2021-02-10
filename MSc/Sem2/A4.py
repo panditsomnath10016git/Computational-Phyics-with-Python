@@ -56,9 +56,7 @@ print(cycl_arr)
 stop = input("\n Q3> --- \n")
 
 m = 10
-framed_one = np.zeros(
-    (m, m)
-)  # initialize array filled with zeros
+framed_one = np.zeros((m, m))  # initialize array filled with zeros
 
 # adding 1 to border elements
 index = [0, 9]  # index of row or coloum to be replaced with 1
@@ -69,7 +67,7 @@ for i in index:
 print(framed_one)
 
 # Output:
-#[[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+# [[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
 # [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
 # [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
 # [1. 0. 0. 0. 0. 0. 0. 0. 0. 1.]
@@ -101,9 +99,7 @@ plt.clabel(contours, inline=1)
 
 plt.quiver(X1, Y1, u, v)  # gradient plot
 
-plt.title(
-    r"Contours of $U=\frac{1}{2} (x^2+y^2)$ and its gradient"
-)
+plt.title(r"Contours of $U=\frac{1}{2} (x^2+y^2)$ and its gradient")
 plt.xlabel("$x \longrightarrow$")
 plt.ylabel("$y \longrightarrow$")
 plt.tight_layout
@@ -121,8 +117,7 @@ z = np.linspace(-10, 10, 100)
 
 Y, Z = np.meshgrid(y, z)
 V = (
-    lmda * 9
-    * np.log(((Y + d) ** 2 + Z ** 2) / ((Y - d) ** 2 + Z ** 2))
+    lmda * 9 * np.log(((Y + d) ** 2 + Z ** 2) / ((Y - d) ** 2 + Z ** 2))
 )  # potential(*10^9)
 
 contours = plt.contour(Y, Z, V, 50)  # potential plot

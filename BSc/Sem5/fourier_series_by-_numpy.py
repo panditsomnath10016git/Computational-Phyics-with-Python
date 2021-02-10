@@ -33,14 +33,14 @@ ignr = [0]  # to ignore  coefft.s [n's'], otherwise [0]
 # simpson 1/3 integration module
 def simps1_3(ya, xa):
     h = (xa[-1] - xa[0]) / (len(xa) - 1)
-    s = ya[0] + 4 * sum(ya[1:-2:2]) + 2 * sum(ya[2:-3:2]) + ya[-1]
+    s = ya[0] + 4 * sum(ya[1:-1:2]) + 2 * sum(ya[2:-2:2]) + ya[-1]
     return (h / 3) * s
 
 
 # trapizoidal integration module
 def trpzd(ya, xa):
     h = (xa[-1] - xa[0]) / (len(xa) - 1)
-    s = ya[0] + 2 * sum(ya[1:-2]) + ya[-1]
+    s = ya[0] + 2 * sum(ya[1:-1]) + ya[-1]
     return (h / 2) * s
 
 

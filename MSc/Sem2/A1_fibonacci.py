@@ -20,7 +20,7 @@ f_l, f_m = f1, f2  # redifining variables for convenience
 
 while i < n - 1:
     f_n = f_l + f_m  # next term
-    f_l, f_m = f_m, f_n # redifing the variables for the next loop
+    f_l, f_m = f_m, f_n  # redifing the variables for the next loop
     i += 1  # updating index
 #    print (f_n)       #printing from the 3rd term
 
