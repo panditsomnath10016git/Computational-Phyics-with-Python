@@ -21,15 +21,9 @@ def SpHarmonics(l, m, theta, phi, real=True):
     #   print(psi)
     if l == 2:
         if m == 0:
-            psi = np.sqrt(5 / (16 * np.pi)) * (
-                3 * np.cos(theta) ** 2 - 1
-            )
+            psi = np.sqrt(5 / (16 * np.pi)) * (3 * np.cos(theta) ** 2 - 1)
         if abs(m) == 1:
-            psi = (
-                -m
-                * np.sqrt(15 / (32 * np.pi))
-                * np.sin(2 * theta)
-            )
+            psi = -m * np.sqrt(15 / (32 * np.pi)) * np.sin(2 * theta)
         if abs(m) == 2:
             psi = np.sqrt(15 / (32 * np.pi)) * np.sin(theta) ** 2
 
@@ -53,9 +47,7 @@ mm = np.arange(-l, l + 1)
 print("l=", l, "\nm=", mm)
 
 # generating the coordinate points
-theta, phi = np.linspace(0, np.pi, 51), np.linspace(
-    0, 2 * np.pi, 101
-)
+theta, phi = np.linspace(0, np.pi, 51), np.linspace(0, 2 * np.pi, 101)
 THETA, PHI = np.meshgrid(theta, phi)
 
 for m in mm:
@@ -82,8 +74,7 @@ for m in mm:
         ax.set_title(
             "Plot of  r=|"
             + phase
-            + "$\left(Y_{%d}^{%d}(\\theta,\phi)\\right)$|"
-            % (l, m),
+            + "$\left(Y_{%d}^{%d}(\\theta,\phi)\\right)$|" % (l, m),
             fontsize=20,
         )
         fcolor = cm.ScalarMappable(cmap=plt.get_cmap("rainbow"))
