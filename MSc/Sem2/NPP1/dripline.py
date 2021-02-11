@@ -34,7 +34,12 @@ A_at_dbdaZ0 = A[np.argmin(np.abs(db_da_Z))]
 # Binding energy terms diiferentiated with respect to A at const N
 vol = A_v
 sur = -A_s * (2.0 / 3) * A ** (-1.0 / 3)
-col = -A_c * A ** (-4.0 / 3) * (5 * A ** 2 - 2 * A * (2 * N + 1) - N * (N + 1)) / 3
+col = (
+    -A_c
+    * A ** (-4.0 / 3)
+    * (5 * A ** 2 - 2 * A * (2 * N + 1) - N * (N + 1))
+    / 3
+)
 asym = -A_a * (1 - 4 * (N ** 2 / A ** 2))
 
 db_da_N = vol + sur + col + asym
