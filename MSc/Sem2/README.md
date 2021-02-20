@@ -17,3 +17,9 @@
 **A6_Q4**<img src="img/A6_Q4.svg" width="400" />
 
 **A6_Q5a**<img src="img/A6_Q5a.svg" width="400" />
+
+**A7_Q1**<img src="img/A7_Q1.svg" width="400" />
+
+**A7_Q3**<img src="img/A7_Q3.svg" width="400" />
+
+**A7_Q4**<img src="img/A7_Q4.svg" width="400" />
