@@ -43,7 +43,7 @@ def cubic_spline_interpolate(x_data, f_data, x, d2f_0=0, d2f_n=0):
     h = np.diff(x_data)  # interval sizes
     d2f = dderivatives(x_data, f_data, h, d2f_0, d2f_n)
 
-    i = find_neighbour_index(x, x_data)
+    i = find_left_neighbour_index(x, x_data)
     h_i = x_data[i + 1] - x_data[i]
     A = (x - x_data[i + 1]) / (-h_i)
     B = 1 - A
@@ -84,7 +84,7 @@ def dderivatives(x_data, f_data, h, d2f_0, d2f_n):
     return d2f
 
 
-def find_neighbour_index(x, x_data):
+def find_left_neighbour_index(x, x_data):
     distance = x - x_data
     i = np.argmin(abs(distance))
     # check if i-th position is after x's position or the right-end
