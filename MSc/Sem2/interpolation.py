@@ -86,7 +86,7 @@ def dderivatives(x_data, f_data, h, d2f_0, d2f_n):
     return d2f
 
 
-def find_neighbour_index(x, x_data):
+def left_neighbour_index(x, x_data):
     distance = x - x_data
     i = np.argmin(abs(distance))
     # check if i-th position is after x's position or the right-end
