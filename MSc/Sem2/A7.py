@@ -145,7 +145,7 @@ HOLD = input(
 data = np.loadtxt("A7_Q4_data.txt")
 x_data, y_data = data[:, 0], data[:, 1]
 
-x_min, x_max = 1.0, 5.0
+x_min, x_max = min(x_data), max(x_data)
 x = np.linspace(x_min, x_max, 100)
 
 # Interpolate to find values between x_min and x_max
