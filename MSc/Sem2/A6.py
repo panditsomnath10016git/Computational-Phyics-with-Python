@@ -7,8 +7,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-from simpson1_3 import simpson1_3
-from quadrature import gauss_quad
+from integrate import simpson1_3, gauss_quad
 
 
 print(50 * "-")
@@ -112,7 +111,7 @@ plt.plot(ln_eps, T, ".", good_ln_eps, T[index], "o")
 plt.xlabel("$\ln(\epsilon) \longrightarrow$")
 plt.ylabel("$ T \longrightarrow$")
 plt.grid()
-plt.savefig("A6_Q2a.svg")
+# plt.savefig("A6_Q2a.svg")
 plt.show()
 
 ## Q2b - Time period is independent of amplitude
@@ -138,7 +137,7 @@ plt.xlabel(" amplitude$ \longrightarrow$")
 plt.ylabel("$ T \longrightarrow$")
 plt.ylim(0, 5)
 plt.grid()
-plt.savefig("A6_Q2b.svg")
+# plt.savefig("A6_Q2b.svg")
 plt.show()
 
 
@@ -260,7 +259,7 @@ plt.title("Heat capacity Vs. Temprature graph")
 plt.xlabel("Temperature $\longrightarrow$")
 plt.ylabel("$C_{v} \longrightarrow$")
 plt.grid()
-plt.savefig("A6_Q4.svg")
+# plt.savefig("A6_Q4.svg")
 plt.show()
 
 
@@ -296,7 +295,7 @@ plt.xlabel("$ x \longrightarrow$")
 plt.ylabel("$ \psi_{n}(x)\longrightarrow$")
 plt.grid()
 plt.legend()
-plt.savefig("A6_Q5a.svg")
+# plt.savefig("A6_Q5a.svg")
 plt.show()
 
 ##Q5b - position uncertainty in n-th level of oscillator
