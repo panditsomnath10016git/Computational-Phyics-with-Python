@@ -47,13 +47,11 @@ def lagrange_interpolate_xy(x_data, y_data, f_data, x, y):
 
     parameters
     ------------
-    x_data : numpy_array
-        x values of input data.
-    y_data : numpy_array
-        y values of input data.
+    x_data, y_data : numpy_arrays
+        x, y values of input data.
     f_data : 2d numpy_ndarray
         Function values against (x_data, y_data).
-    x : scalar
+    x, y : scalars
         Point to be interpolated.
 
     Returns

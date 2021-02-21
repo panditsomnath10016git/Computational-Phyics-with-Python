@@ -96,7 +96,7 @@ plt.ylabel("$y \longrightarrow$")
 plt.legend()
 plt.grid()
 plt.tight_layout()
-plt.savefig("A5_Q2b.svg")
+# plt.savefig("A5_Q2b.svg")
 plt.show()
 
 
