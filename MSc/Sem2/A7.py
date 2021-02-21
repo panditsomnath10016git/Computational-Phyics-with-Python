@@ -140,7 +140,7 @@ HOLD = input(
 )
 
 # Load the data from file
-data = np.loadtxt("Q4_data.txt")
+data = np.loadtxt("A7_Q4_data.txt")
 x_data, y_data = np.transpose(data[:, 0]), np.transpose(data[:, 1])
 
 x_min, x_max = 1.0, 5.0

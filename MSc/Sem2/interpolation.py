@@ -38,23 +38,25 @@ def lagrange_interpolate_xy(x_data, y_data, f_data, x, y):
 ## Cubic spline interpolation ------------------------------------
 
 
-def cubic_spline_interpolate(x_data, f_data, x, d2f_0=0, d2f_n=0):
+def cubic_spline_interpolate(x_data, f_data, xx, d2f_0=0, d2f_n=0):
+    """Takes data points and interpolation points as numpy-array and retuns numpy-array of interpolated values"""
     n = len(x_data)  # number of data points
     h = np.diff(x_data)  # interval sizes
     d2f = dderivatives(x_data, f_data, h, d2f_0, d2f_n)
+    f=[]
+    for x in xx:
+        i = find_neighbour_index(x, x_data)
+        h_i = x_data[i + 1] - x_data[i]
+        A = (x - x_data[i + 1]) / (-h_i)
+        B = 1 - A
+        f += [
+            A * f_data[i]
+            + B * f_data[i + 1]
+            + (A ** 3 - A) * h_i ** 2 * d2f[i] / 6
+            + (B ** 3 - B) * h_i ** 2 * d2f[i + 1] / 6
+        ]
 
-    i = find_neighbour_index(x, x_data)
-    h_i = x_data[i + 1] - x_data[i]
-    A = (x - x_data[i + 1]) / (-h_i)
-    B = 1 - A
-    f = (
-        A * f_data[i]
-        + B * f_data[i + 1]
-        + (A ** 3 - A) * h_i ** 2 * d2f[i] / 6
-        + (B ** 3 - B) * h_i ** 2 * d2f[i + 1] / 6
-    )
-
-    return f
+    return np.array(f)
 
 
 def dderivatives(x_data, f_data, h, d2f_0, d2f_n):
