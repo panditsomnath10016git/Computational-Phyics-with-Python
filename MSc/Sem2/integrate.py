@@ -43,7 +43,7 @@ def trapezoidal(x, y):
     Parameters
     ------------
     x : array_like
-        x values.
+        Linearly spaced x values.
     y : array_like
         y = f(x) values.
 
@@ -54,8 +54,8 @@ def trapezoidal(x, y):
 
     """
 
-    h = (x[-1] - x[0]) / (len(x) - 1)
-    s = y[0] + 2 * sum(y[1:-2]) + y[-1]
+    h = x[1] - x[0]
+    s = y[0] + 2 * sum(y[1:-1]) + y[-1]
 
     return (h / 2) * s
 
@@ -67,7 +67,7 @@ def simpson1_3(x, y):
     Parameters
     ------------
     x : array_like
-        x values.
+        Linearly spaced x values. Odd no of values are needed.
     y : array_like
         y = f(x) values.
 
@@ -77,8 +77,12 @@ def simpson1_3(x, y):
         Integration value.
 
     """
+    if len(x) % 2 == 0:
+        raise ValueError(
+            "Number of points must be odd for simpson 1/3 integration"
+        )
 
-    h = (x[-1] - x[0]) / (len(x) - 1)
+    h = x[1] - x[0]
     s = y[0] + 4 * sum(y[1:-1:2]) + 2 * sum(y[2:-2:2]) + y[-1]
 
     return (h / 3) * s
