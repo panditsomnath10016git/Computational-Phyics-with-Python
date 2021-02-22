@@ -32,7 +32,7 @@ y_data = f_1(x_data)
 # Interpolate to find value at other point
 x_0 = float(input("x value between %f & %f = " % (xi, xf)))
 y_0 = lagrange_interpolate(x_data, y_data, x_0)
-print("value at %r = %.3f" % (x_0, y_0), f_1(x_0))
+print("value at %r = %.3f (real value ~ %.3f)" % (x_0, y_0, f_1(x_0)))
 
 ##Graph with 30 data points
 x_data = np.linspace(xi, xf, 30)
@@ -55,7 +55,7 @@ plt.show()
 
 # OUTPUT:
 # x value between 0.000000 & 3.141593 = 2.5
-# value at 2.5 = -1.004
+# value at 2.5 = -1.004(real value ~ -1.004)
 
 
 print(50 * "-")  # ------------------------------------------------
@@ -81,13 +81,13 @@ x_0 = float(input("x value between %f & %f = " % (xi, xf)))
 y_0 = float(input("y value between %f & %f = " % (yi, yf)))
 
 f_0 = lagrange_interpolate_xy(x_data, y_data, f_data, x_0, y_0)
-print("value at (%r,%r) = %.3f" % (x_0, y_0, f_0), f_2(x_0, y_0))
+print("value at (%r,%r) = %.3f(real value ~ %.3f)" % (x_0, y_0, f_0, f_2(x_0, y_0)))
 
 
 ##OUTPUT:
 # x value between 0.000000 & 3.141593 = 2.5
 # y value between 0.000000 & 3.141593 = 1.5
-# value at (2.5,1.5) = -1.410
+# value at (2.5,1.5) = -1.410(real value ~ -1.410)
 
 
 print(50 * "-")  # -----------------------------------------------
