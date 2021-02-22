@@ -203,7 +203,7 @@ while True:
     print("no. of steps = ", n)
 
     another_root = str(input("Another root.. y/n? "))
-    if another_root == "n" or "N":
+    if another_root == ("n" or "N"):
         break
 
 # OUTPUT:
