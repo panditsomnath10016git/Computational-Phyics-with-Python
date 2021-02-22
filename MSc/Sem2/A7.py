@@ -81,7 +81,10 @@ x_0 = float(input("x value between %f & %f = " % (xi, xf)))
 y_0 = float(input("y value between %f & %f = " % (yi, yf)))
 
 f_0 = lagrange_interpolate_xy(x_data, y_data, f_data, x_0, y_0)
-print("value at (%r,%r) = %.3f(real value ~ %.3f)" % (x_0, y_0, f_0, f_2(x_0, y_0)))
+print(
+    "value at (%r,%r) = %.3f(real value ~ %.3f)"
+    % (x_0, y_0, f_0, f_2(x_0, y_0))
+)
 
 
 ##OUTPUT:
@@ -142,7 +145,7 @@ HOLD = input(
 )
 
 # Load the data from file
-data = np.loadtxt("A7_Q4_data.txt")
+data = np.loadtxt("A7_Q4_data.txt", dtype="float")
 x_data, y_data = data[:, 0], data[:, 1]
 
 x_min, x_max = min(x_data), max(x_data)

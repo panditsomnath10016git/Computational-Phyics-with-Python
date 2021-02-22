@@ -74,7 +74,7 @@ diff_BWD = np.insert(diff_BWD, 0, first_ele)
 # derivative by central difference method
 diff_CD = (y[2:n] - y[0 : n - 2]) / (2 * dx)
 
-#Q2a ploting y vs. x
+# Q2a ploting y vs. x
 plt.plot(x, y)
 plt.xlim(xi, xf)
 plt.title(r"Plot of 'data.txt'")
@@ -85,7 +85,7 @@ plt.tight_layout()
 # plt.savefig("A5_Q2a.png")
 plt.show()
 
-#Q2b plotting derivatives
+# Q2b plotting derivatives
 plt.plot(x, diff_FWD, label="Forward difference ")
 plt.plot(x, diff_BWD, label="Backward difference ")
 plt.plot(x[1:-1], diff_CD, label="Central difference ")

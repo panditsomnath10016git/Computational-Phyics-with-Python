@@ -119,7 +119,7 @@ def cubic_spline_interpolate(x_data, f_data, xx, d2f_0=0, d2f_n=0):
     n = len(x_data)  # number of data points
     h = np.diff(x_data)  # interval sizes
     d2f = dderivatives(x_data, f_data, h, d2f_0, d2f_n)
-    f = []
+    f = []  # f values against xx
     for x in xx:
         i = left_neighbour_index(x, x_data)
         h_i = x_data[i + 1] - x_data[i]
@@ -140,16 +140,16 @@ def dderivatives(x_data, f_data, h, d2f_0, d2f_n):
 
     n = len(x_data)
     coeff_matrix = 2.0 * np.eye(n)
-    coeff_matrix[0, 1] = coeff_matrix[-1, -2] = 1
+    coeff_matrix[0, 0] = coeff_matrix[-1, -1] = 1
     mu = h[:-1] / (h[1:] + h[:-1])
 
-    for i, mu_i in zip(range(1, n - 1), mu):
+    for i, mu_i in enumerate(mu, 1):
         coeff_matrix[i, i - 1] = mu_i
         coeff_matrix[i, i + 1] = 1 - mu_i
 
     d = np.zeros(n)
-    d[0] = 6 * (f_data[1] - f_data[0]) / h[0] ** 2  # or, d2f_0
-    d[-1] = 6 * (f_data[-2] - f_data[-1]) / h[-1] ** 2  # or, d2f_n
+    d[0] = d2f_0
+    d[-1] = d2f_n
     d[1:-1] = (
         6
         * (
