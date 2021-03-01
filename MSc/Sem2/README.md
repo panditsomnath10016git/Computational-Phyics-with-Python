@@ -31,5 +31,7 @@
 
 **A7_Q4**<img src="img/A7_Q4.svg" width="400" />
 
-**A8_Q4_trapz**<img src="img/A8_Q4_trapizoidal.svg" width="400" />**A8_Q4_simps**<img src="img/A8_Q4_simpson1_3.svg" width="400" />
+## A8
+
+**A8_Q4_trapz**<img src="img/A8_Q4_trapzoidal.svg" width="400" />**A8_Q4_simps**<img src="img/A8_Q4_simpson1_3.svg" width="400" />
 
