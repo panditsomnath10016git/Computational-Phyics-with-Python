@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def Inv(M):
+def inv(M):
     """
     Calculate inverse of matrix by Gauss elimination method.
 
@@ -41,5 +41,5 @@ def Inv(M):
 
 
 # m=np.array([[1,2],[3,7]])
-# n=Inv(m)
+# n=inv(m)
 # print(n,np.matmul(m,n))
