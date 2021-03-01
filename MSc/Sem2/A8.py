@@ -198,13 +198,13 @@ no_of_func = len(funcs)
 
 N = 20  # maximum interval
 intervals = np.arange(2, N + 1, 2)
-rules = ["trapzoidal", "simpson1_3"]
+rules = ["trapezoidal", "simpson1_3"]
 
 for rule in rules:
     err = np.zeros((no_of_func, len(intervals)))
     for n, n_intervals in enumerate(intervals):
 
-        if rule == "trapzoidal":
+        if rule == "trapezoidal":
             n_points = n_intervals + 1
         if rule == "simpson1_3":
             n_points = 2 * n_intervals + 1
@@ -217,7 +217,7 @@ for rule in rules:
             y = eval("f%i(x)" % i)
 
             # integration values and error
-            if rule == "trapzoidal":
+            if rule == "trapezoidal":
                 numeric_val = trapezoidal(x, y)
             if rule == "simpson1_3":
                 numeric_val = simpson1_3(x, y)
