@@ -190,7 +190,7 @@ x_min = [0.0, 0.0, 0.0, 0.0]
 x_max = [1.0, 1.0, 1.0, np.pi]
 limits = np.array([x_min, x_max]).T
 
-# Analytic vlaues of integraions
+# Analytic values of integration
 analytic_val = [0.5, 1.0 / 3, 1.0 / 4, 2.0]
 
 funcs = ["$x$", "$x^2$", "$x^3$", "$\sin(x)$"]
