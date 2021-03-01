@@ -112,7 +112,7 @@ def cubic_spline_interpolate(x_data, f_data, xx, d2f_0=0, d2f_n=0):
     except:  # otherwise make it a list
         xx = [xx]
 
-    # Sort data in decending order
+    # Sort data
     indices = np.argsort(x_data)
     x_data, f_data = x_data[indices], f_data[indices]
 
