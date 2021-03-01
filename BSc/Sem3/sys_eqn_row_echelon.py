@@ -17,7 +17,7 @@ for rl in range(n):  # pick leading row
     if a[rl][rl] != 0:  # check if diagonal element is non zero
         a[rl] = [1.0 * element / a[rl][rl] for element in a[rl]]
     else:
-        print "solution not available\n%r" % a
+        print ("solution not available\n%r" % a)
         n = 0  # for no display of solution
         break
     for rn in range(n):  # take the operational row
@@ -26,6 +26,6 @@ for rl in range(n):  # pick leading row
             for col in range(n + 1):  # subtract coloumnwise
                 a[rn][col] -= m * a[rl][col]
 
-print np.array(a)  #'a' is the row echelon matrix
+print (np.array(a))  #'a' is the row echelon matrix
 for i in range(n):  # display the solution
-    print "x%r=" % i, a[i][n]
+    print ("x%r=" % i, a[i][n])
