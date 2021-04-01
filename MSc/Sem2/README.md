@@ -35,10 +35,12 @@
 
 **A8_Q4_trapz**<img src="img/A8_Q4_trapzoidal.svg" width="400" />**A8_Q4_simps**<img src="img/A8_Q4_simpson1_3.svg" width="400" />
 
-##A10
+## A10
 
 **A10_Q1**<img src="img/A10_Q1.png" width="400" />
 **A10_Q2**<img src="img/A10_Q2.png" width="400" />
+
 **A10_Q3**<img src="img/A10_Q3.png" width="400" />
 **A10_Q3_3d**<img src="img/A10_Q3_3d.svg" width="400" />
+
 **A10_Q4**<img src="img/A10_Q4.svg" width="400" />
