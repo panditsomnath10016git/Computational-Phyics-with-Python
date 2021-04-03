@@ -29,16 +29,16 @@ q_a = QWP_rot[:, 0]
 
 q_rads = q_a * np.pi / 180
 a_rads = analyzer_angle * np.pi / 180
-QWP_fit=np.zeros((len(analyzer_angle),3))
+QWP_fit = np.zeros((len(analyzer_angle), 3))
 
 plt.axes(projection="polar")
 
 for i, angle in enumerate([100, 130, 160]):
-    d=QWP_rot[:, i+1]
+    d = QWP_rot[:, i + 1]
     d_fit = poly.polyval(analyzer_angle, poly.polyfit(q_a, d, 13))
-    QWP_fit[:,i]=d_fit
+    QWP_fit[:, i] = d_fit
     plt.polar(q_rads, d, ".")
-    plt.polar(a_rads, d_fit, label="$%d^o$"%angle)
+    plt.polar(a_rads, d_fit, label="$%d^o$" % angle)
 
 plt.title("Intensity at different analyzer angles")
 plt.legend(title="QWP angles", loc="best")
@@ -48,13 +48,13 @@ plt.clf()
 
 # a,b value calc
 
-#sq_cost[:, 0]+
+# sq_cost[:, 0]+
 
 for i, angle in enumerate([100, 130, 160], 1):
-    a_ofst=analyzer_angle[np.argmax(QWP_fit[:, i-1])]%180
-    if a_ofst>90:
-        a_ofst=a_ofst-180
-    cos_sqr_a = np.cos(np.arange(-a_ofst,360-a_ofst+10,10)*np.pi/180)**2
+    a_ofst = analyzer_angle[np.argmax(QWP_fit[:, i - 1])] % 180
+    if a_ofst > 90:
+        a_ofst = a_ofst - 180
+    cos_sqr_a = np.cos(np.arange(-a_ofst, 360 - a_ofst + 10, 10) * np.pi / 180) ** 2
     i_data = sq_cost[:, i]
     poly_coeff = poly.polyfit(cos_sqr_a, i_data, 1)
     i_fit = poly.polyval(cos_sqr_a, poly_coeff)
@@ -69,10 +69,10 @@ for i, angle in enumerate([100, 130, 160], 1):
         0.7,
         min(i_fit),
         "$\\theta$ offset=%r$^o$\nslope($a^2-b^2$)=%.2f\ny-intercept($b^2$)=%.2f\na/b=%.2f"
-        % (a_ofst,slope, b2, a_by_b),
+        % (a_ofst, slope, b2, a_by_b),
     )
     plt.xlabel("$\cos^2\\theta\longrightarrow$")
     plt.ylabel("I $(\mu A) \longrightarrow$")
     plt.grid()
-    plt.savefig("a_by_b%s.pdf"%angle)
+    plt.savefig("a_by_b%s.pdf" % angle)
     plt.show()
