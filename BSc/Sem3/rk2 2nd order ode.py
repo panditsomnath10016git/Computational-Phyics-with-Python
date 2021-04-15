@@ -3,19 +3,19 @@ import math as m
 import matplotlib.pyplot as plt
 
 
-def f(x, y, z):  # defining the function
-    fxyz = z
-    return fxyz
+def f(x,phi):  # defining the function
+    return phi
 
 
-def g(x, y, z):  # g=f '
-    gxyz = (11 * m.exp(-x) - 3 * z - 5 * y) / 2
-    return gxyz
+def g(x, psi,k):  # g=f '
+    return -k*psi
 
 
-x0, y0, z0 = 0.0, 7.0, 13.0  # initial values
-xmin, xmax = -1.0, 1.0  # range of solution
-h = 0.25  # step size
+x0, psi0, phi0 = 0.0, 0.0, 1.0  # initial values
+xmin, xmax = -0.0, 1.0  # range of solution
+n_slice = 500
+n_points = n_slice+1
+h = (xmax-xmin)/n_points # step size
 
 np = int(abs(xmax - x0) / h)  # points in + direction
 nm = int(abs(xmin - x0) / h)  # points in -  direction
