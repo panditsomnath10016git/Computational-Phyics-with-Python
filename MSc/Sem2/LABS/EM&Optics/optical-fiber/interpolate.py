@@ -71,9 +71,9 @@ def lagrange_interpolate_xy(x_data, y_data, f_data, x, y):
         for j in range(n_data_points):
             x_excluded = np.delete(x_data, i)
             y_excluded = np.delete(y_data, j)
-            c[i, j] = np.prod((x - x_excluded) / (x_data[i] - x_excluded)) * np.prod(
-                (y - y_excluded) / (y_data[j] - y_excluded)
-            )
+            c[i, j] = np.prod(
+                (x - x_excluded) / (x_data[i] - x_excluded)
+            ) * np.prod((y - y_excluded) / (y_data[j] - y_excluded))
 
     f = np.sum(np.multiply(c, f_data))
 
@@ -152,7 +152,10 @@ def dderivatives(x_data, f_data, h, d2f_0, d2f_n):
     d[-1] = d2f_n
     d[1:-1] = (
         6
-        * ((f_data[2:] - f_data[1:-1]) / h[1:] - (f_data[1:-1] - f_data[:-2]) / h[:-1])
+        * (
+            (f_data[2:] - f_data[1:-1]) / h[1:]
+            - (f_data[1:-1] - f_data[:-2]) / h[:-1]
+        )
         / (x_data[2:] - x_data[:-2])
     )
 
